@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { loadLocalCatches } from "@/utils/localCatches";
 import { motion, AnimatePresence } from "framer-motion";
 // Import Leaflet from npm (you installed it with `npm install leaflet`)
@@ -108,6 +109,7 @@ interface CatchMapProps {
 }
 
 export const CatchMap = ({ onCatchSelect, className }: CatchMapProps) => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<L.Map | null>(null);
   const catchesLayerRef = useRef<L.LayerGroup | null>(null);
@@ -158,7 +160,7 @@ export const CatchMap = ({ onCatchSelect, className }: CatchMapProps) => {
 
   useEffect(() => {
     if (!navigator.geolocation) {
-      setLocationError("Geolocation not supported");
+      setLocationError(t('errors.geolocationNotSupported'));
       return;
     }
     navigator.geolocation.getCurrentPosition(
@@ -166,9 +168,9 @@ export const CatchMap = ({ onCatchSelect, className }: CatchMapProps) => {
         setUserLocation([pos.coords.latitude, pos.coords.longitude]);
         setLocationError("");
       },
-      () => setLocationError("Location unavailable")
+      () => setLocationError(t('errors.locationUnavailable'))
     );
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
@@ -409,7 +411,7 @@ export const CatchMap = ({ onCatchSelect, className }: CatchMapProps) => {
         <Card className="bg-white/90 backdrop-blur-sm shadow-xl border border-slate-200 text-slate-800">
           <CardContent className="p-3">
             <div className="flex items-center gap-2 text-xs font-medium text-gray-400 mb-2">
-              <Eye className="w-3 h-3" /> Map Layers
+              <Eye className="w-3 h-3" /> {t('map.mapLayers')}
             </div>
             <div className="flex flex-col gap-1">
               {(() => {
@@ -423,19 +425,19 @@ export const CatchMap = ({ onCatchSelect, className }: CatchMapProps) => {
                 const filters: FilterItem[] = [
                   {
                     key: "all",
-                    label: "All Catches",
+                    label: t('map.allCatches'),
                     icon: Fish,
                     count: catches.length + sampleFish.length,
                   },
                   {
                     key: "mine",
-                    label: "My Catches",
+                    label: t('map.myCatches'),
                     icon: Award,
                     count: catches.length,
                   },
                   {
                     key: "community",
-                    label: "Community Data",
+                    label: t('map.communityData'),
                     icon: Users,
                     count: sampleFish.length,
                   },

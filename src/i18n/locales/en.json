@@ -60,12 +60,17 @@
     "title": "Map",
     "search": "Search location...",
     "myCatches": "My Catches",
+    "allCatches": "All Catches",
+    "communityData": "Community Data",
+    "mapLayers": "Map Layers",
     "viewOnMap": "View on Map",
     "location": "Location",
     "noLocation": "No location data"
   },
   "history": {
     "title": "My Catches",
+    "catchHistory": "Catch History",
+    "personalLog": "Your personal fishing log",
     "search": "Search catches...",
     "noCatches": "No catches yet",
     "caught": "Caught",
@@ -73,7 +78,12 @@
     "weight": "Weight",
     "length": "Length",
     "date": "Date",
-    "viewDetails": "View Details"
+    "viewDetails": "View Details",
+    "traceability": "Traceability",
+    "health": "Health",
+    "healthScore": "Health Score",
+    "analysisDetails": "Analysis Details",
+    "recentTrends": "Recent Trends"
   },
   "profile": {
     "title": "Profile",
@@ -142,6 +152,12 @@
     "yes": "Yes",
     "no": "No",
     "ok": "OK"
+  },
+  "errors": {
+    "geolocationNotSupported": "Geolocation not supported",
+    "locationUnavailable": "Location unavailable",
+    "failedToGetLocation": "Failed to get location permission",
+    "failedToSaveSettings": "Failed to save settings"
   },
   "chat": {
     "typeMessage": "Type a message...",

@@ -1,5 +1,6 @@
 import { Home, Camera, Map, History, User } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
 
 interface BottomNavigationProps {
@@ -9,13 +10,14 @@ interface BottomNavigationProps {
 export const BottomNavigation = ({ className }: BottomNavigationProps) => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const { t } = useTranslation();
 
   const navItems = [
-    { id: 'feed', path: '/', icon: Home, label: 'Feed' },
-    { id: 'analyze', path: '/analyze', icon: Camera, label: 'Analyze' },
-    { id: 'map', path: '/map', icon: Map, label: 'Map' },
-    { id: 'history', path: '/history', icon: History, label: 'History' },
-    { id: 'profile', path: '/profile', icon: User, label: 'Profile' },
+    { id: 'feed', path: '/', icon: Home, labelKey: 'nav.home' },
+    { id: 'analyze', path: '/analyze', icon: Camera, labelKey: 'nav.analyze' },
+    { id: 'map', path: '/map', icon: Map, labelKey: 'nav.map' },
+    { id: 'history', path: '/history', icon: History, labelKey: 'nav.history' },
+    { id: 'profile', path: '/profile', icon: User, labelKey: 'nav.profile' },
   ];
 
   return (
@@ -26,8 +28,9 @@ export const BottomNavigation = ({ className }: BottomNavigationProps) => {
       className
     )}>
       <div className="flex justify-around items-center max-w-md mx-auto">
-        {navItems.map(({ id, path, icon: Icon, label }) => {
+        {navItems.map(({ id, path, icon: Icon, labelKey }) => {
           const isActive = currentPath === path;
+          const label = t(labelKey);
           
           return (
             <Link

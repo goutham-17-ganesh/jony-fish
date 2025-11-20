@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 import { History, Filter, Zap, X, Droplet, BarChart } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -153,15 +154,18 @@ export const HistoryList = ({
 }: {
   onCatchSelect: (c: FishCatch) => void;
   items: FishCatch[];
-}) => (
-  <motion.div
-    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-    initial="hidden"
-    animate="visible"
-    variants={{ visible: { transition: { staggerChildren: 0.05 } } }}
-  >
-    {/* fallback images used when an item has no image_data */}
-    {(() => {
+}) => {
+  const { t } = useTranslation();
+  
+  return (
+    <motion.div
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      initial="hidden"
+      animate="visible"
+      variants={{ visible: { transition: { staggerChildren: 0.05 } } }}
+    >
+      {/* fallback images used when an item has no image_data */}
+      {(() => {
       const fallback = [
         "/fish/anchovy.jpg",
         "/fish/barracuda.jpg",
@@ -201,11 +205,11 @@ export const HistoryList = ({
               <div className="flex items-center gap-4 mt-3 text-xs text-gray-300">
                 <span className="flex items-center gap-1.5">
                   <Zap size={14} className="text-sky-400" />{" "}
-                  {c.confidence.toFixed(0)}% Traceability
+                  {c.confidence.toFixed(0)}% {t('history.traceability')}
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Droplet size={14} className="text-emerald-400" />{" "}
-                  {c.health_score.toFixed(0)}% Health
+                  {c.health_score.toFixed(0)}% {t('history.health')}
                 </span>
               </div>
             </div>
@@ -213,8 +217,9 @@ export const HistoryList = ({
         );
       });
     })()}
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 const AnalysisResults = ({ result }: { result: any }) => (
   <div className="text-gray-300 text-sm">
@@ -230,6 +235,7 @@ const cn = (...classes: (string | undefined | null | false)[]) =>
 // --- END OF DUMMY IMPLEMENTATIONS ---
 
 export default function HistoryPage() {
+  const { t } = useTranslation();
   const [selected, setSelected] = useState<FishCatch | null>(null);
   const [catches, setCatches] = useState<FishCatch[]>([]);
   const [speciesHistory, setSpeciesHistory] = useState<FishCatch[]>([]);
@@ -271,8 +277,8 @@ export default function HistoryPage() {
   }, [speciesHistory]);
 
   const chartConfig = {
-    Traceability: { label: "Traceability", color: "hsl(195, 89%, 52%)" }, // sky-500
-    Health: { label: "Health", color: "hsl(142, 71%, 45%)" }, // emerald-500
+    Traceability: { label: t('history.traceability'), color: "hsl(195, 89%, 52%)" }, // sky-500
+    Health: { label: t('history.health'), color: "hsl(142, 71%, 45%)" }, // emerald-500
   };
 
   return (
@@ -304,8 +310,8 @@ export default function HistoryPage() {
           <div className="flex items-center gap-3">
             <History className="h-6 w-6 text-sky-400" />
             <div>
-              <h1 className="text-xl font-bold text-white">Catch History</h1>
-              <p className="text-xs text-gray-400">Your personal fishing log</p>
+              <h1 className="text-xl font-bold text-white">{t('history.catchHistory')}</h1>
+              <p className="text-xs text-gray-400">{t('history.personalLog')}</p>
             </div>
           </div>
           <Button
@@ -313,7 +319,7 @@ export default function HistoryPage() {
             className="text-gray-400 hover:text-white hover:bg-sky-500/20"
           >
             <Filter className="h-4 w-4 mr-2" />
-            Filter
+            {t('common.filter')}
           </Button>
         </div>
       </header>
@@ -356,21 +362,21 @@ export default function HistoryPage() {
                   />
                   <div className="grid grid-cols-2 gap-2 w-full text-center">
                     <div className="bg-sky-500/20 text-sky-300 px-3 py-2 rounded-lg text-sm font-semibold border border-sky-500/30">
-                      <p className="text-xs text-sky-400">Traceability</p>
+                      <p className="text-xs text-sky-400">{t('history.traceability')}</p>
                       {selected.confidence.toFixed(0)}%
                     </div>
                     <div className="bg-emerald-500/20 text-emerald-300 px-3 py-2 rounded-lg text-sm font-semibold border border-emerald-500/30">
-                      <p className="text-xs text-emerald-400">Health Score</p>
+                      <p className="text-xs text-emerald-400">{t('history.healthScore')}</p>
                       {selected.health_score.toFixed(0)}%
                     </div>
                   </div>
                   <div className="bg-slate-800/50 text-gray-300 px-3 py-2 rounded-lg text-sm font-medium w-full text-center border border-slate-700">
-                    Weight: {selected.estimated_weight.toFixed(1)} kg
+                    {t('history.weight')}: {selected.estimated_weight.toFixed(1)} kg
                   </div>
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-white">
-                    Analysis Details
+                    {t('history.analysisDetails')}
                   </h3>
                   <AnalysisResults result={selected as any} />
                 </div>
@@ -379,8 +385,7 @@ export default function HistoryPage() {
               {chartData.length > 1 && (
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-white flex items-center gap-2">
-                    <BarChart size={18} className="text-sky-400" /> Recent
-                    Trends
+                    <BarChart size={18} className="text-sky-400" /> {t('history.recentTrends')}
                   </h3>
                   <div className="h-48 w-full -ml-4">
                     <ChartContainer

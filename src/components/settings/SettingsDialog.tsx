@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { HARDCODED_LANGUAGES } from '@/i18n';
 import {
   Dialog,
   DialogContent,
@@ -95,7 +96,7 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
         }
         toast.success(t('settings.locationEnabled'));
       } else {
-        toast.error(result.error || 'Failed to get location permission');
+        toast.error(result.error || t('errors.failedToGetLocation'));
       }
     }
   };
@@ -111,6 +112,7 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
     setSelectedLanguage(pendingLanguage);
     setShowLanguageConfirm(false);
     toast.success(t('settings.languageChanged'));
+    window.location.reload();
   };
 
   const handleSave = async () => {
@@ -128,24 +130,9 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
       toast.success(t('settings.saved'));
       onOpenChange(false);
     } else {
-      toast.error(result.error || 'Failed to save settings');
+      toast.error(result.error || t('errors.failedToSaveSettings'));
     }
   };
-
-  const languages = [
-    { code: 'en', name: t('languages.en') },
-    { code: 'ta', name: t('languages.ta') },
-    { code: 'te', name: t('languages.te') },
-    { code: 'hi', name: t('languages.hi') },
-    { code: 'kn', name: t('languages.kn') },
-    { code: 'ml', name: t('languages.ml') },
-    { code: 'gu', name: t('languages.gu') },
-    { code: 'mwr', name: t('languages.mwr') },
-    { code: 'bn', name: t('languages.bn') },
-    { code: 'pa', name: t('languages.pa') },
-    { code: 'mr', name: t('languages.mr') },
-    { code: 'or', name: t('languages.or') },
-  ];
 
   return (
     <>
@@ -249,9 +236,9 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    {languages.map((lang) => (
+                    {HARDCODED_LANGUAGES.map((lang) => (
                       <SelectItem key={lang.code} value={lang.code}>
-                        {lang.name}
+                        {t(lang.nameKey)}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -288,7 +275,7 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
             <AlertDialogTitle>{t('settings.confirmLanguage')}</AlertDialogTitle>
             <AlertDialogDescription>
               {t('settings.confirmLanguageMessage', { 
-                language: languages.find(l => l.code === pendingLanguage)?.name || pendingLanguage 
+                language: t(HARDCODED_LANGUAGES.find(l => l.code === pendingLanguage)?.nameKey || 'languages.en')
               })}
             </AlertDialogDescription>
           </AlertDialogHeader>

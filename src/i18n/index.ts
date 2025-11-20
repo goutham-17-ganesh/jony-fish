@@ -30,6 +30,22 @@ const resources = {
   or: { translation: or },
 };
 
+// HARDCODED languages constant for uniform language support across the app
+export const HARDCODED_LANGUAGES = [
+  { code: 'en', nameKey: 'languages.en' },
+  { code: 'ta', nameKey: 'languages.ta' },
+  { code: 'te', nameKey: 'languages.te' },
+  { code: 'hi', nameKey: 'languages.hi' },
+  { code: 'kn', nameKey: 'languages.kn' },
+  { code: 'ml', nameKey: 'languages.ml' },
+  { code: 'gu', nameKey: 'languages.gu' },
+  { code: 'mwr', nameKey: 'languages.mwr' },
+  { code: 'bn', nameKey: 'languages.bn' },
+  { code: 'pa', nameKey: 'languages.pa' },
+  { code: 'mr', nameKey: 'languages.mr' },
+  { code: 'or', nameKey: 'languages.or' },
+] as const;
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)

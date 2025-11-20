@@ -60,12 +60,17 @@
     "title": "मैप",
     "search": "स्थान खोजें...",
     "myCatches": "मेरी मछलियाँ",
+    "allCatches": "सभी मछलियाँ",
+    "communityData": "समुदाय डेटा",
+    "mapLayers": "मैप परतें",
     "viewOnMap": "मैप पर देखें",
     "location": "स्थान",
     "noLocation": "कोई स्थान डेटा नहीं"
   },
   "history": {
     "title": "मेरी मछलियाँ",
+    "catchHistory": "मछली पकड़ने का इतिहास",
+    "personalLog": "आपका व्यक्तिगत मछली पकड़ने का लॉग",
     "search": "मछलियों को खोजें...",
     "noCatches": "कोई मछली नहीं",
     "caught": "पकड़ा गया",
@@ -73,7 +78,12 @@
     "weight": "वजन",
     "length": "लंबाई",
     "date": "तारीख",
-    "viewDetails": "विवरण देखें"
+    "viewDetails": "विवरण देखें",
+    "traceability": "ट्रेसेबिलिटी",
+    "health": "स्वास्थ्य",
+    "healthScore": "स्वास्थ्य स्कोर",
+    "analysisDetails": "विश्लेषण विवरण",
+    "recentTrends": "हाल के रुझान"
   },
   "profile": {
     "title": "प्रोफाइल",
@@ -124,7 +134,8 @@
     "mwr": "मारवाड़ी",
     "bn": "বাংলা",
     "pa": "ਪੰਜਾਬੀ",
-    "mr": "मराठी"
+    "mr": "मराठी",
+    "or": "ଓଡ଼ିଆ"
   },
   "common": {
     "save": "सहेजें",
@@ -141,6 +152,12 @@
     "yes": "हाँ",
     "no": "नहीं",
     "ok": "ठीक है"
+  },
+  "errors": {
+    "geolocationNotSupported": "जियोलोकेशन समर्थित नहीं है",
+    "locationUnavailable": "स्थान उपलब्ध नहीं है",
+    "failedToGetLocation": "स्थान अनुमति प्राप्त करने में विफल",
+    "failedToSaveSettings": "सेटिंग्स सहेजने में विफल"
   },
   "chat": {
     "typeMessage": "संदेश टाइप करें...",
