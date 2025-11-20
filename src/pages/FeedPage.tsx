@@ -17,6 +17,7 @@ import { syncService, SyncStatus } from '@/services/sync';
 // CORE HOOKS AND UTILS
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
+import { useTranslation } from 'react-i18next';
 
 
 // --- ANIMATION VARIANTS ---
@@ -36,6 +37,7 @@ const postCardVariants = {
 
 
 export default function FeedPage() {
+  const { t } = useTranslation();
   const [posts, setPosts] = useState<SocialPost[]>([]);
   const [currentUser, setCurrentUser] = useState<User | null>(authService.getState().user);
   const [syncStatus, setSyncStatus] = useState<SyncStatus>(syncService.getStatus());
@@ -75,19 +77,25 @@ export default function FeedPage() {
     // so we don't need to manually setPosts here anymore.
     await socialService.toggleLike(postId, currentUser.id);
     if (!syncStatus.isOnline) {
-      toast({ title: "Liked offline", description: "Your like will sync when you're back online" });
+      toast({ title: t('post.likedOffline'), description: t('post.likedOfflineDesc') });
     }
   };
 
   const handleComment = async (postId: string) => {
     if (!currentUser) return;
     try {
-      const sampleComments = ["Amazing catch! 🎣", "What a beauty!", "Great photo quality!", "This species is rare!", "Perfect timing! 🌊"];
+      const sampleComments = [
+        t('feed.sampleComment1'),
+        t('feed.sampleComment2'),
+        t('feed.sampleComment3'),
+        t('feed.sampleComment4'),
+        t('feed.sampleComment5')
+      ];
       const randomComment = sampleComments[Math.floor(Math.random() * sampleComments.length)];
       await socialService.addComment(postId, currentUser.id, currentUser, randomComment);
-      toast({ title: "Comment added!", description: syncStatus.isOnline ? "Comment posted successfully" : "Comment saved offline" });
+      toast({ title: t('post.commentAdded'), description: syncStatus.isOnline ? t('post.commentPosted') : t('post.commentSavedOffline') });
     } catch (error) {
-      toast({ title: "Error", description: "Failed to add comment", variant: "destructive" });
+      toast({ title: t('common.error'), description: t('post.failedToCreate'), variant: "destructive" });
     }
   };
 
@@ -95,10 +103,14 @@ export default function FeedPage() {
     const post = posts.find(p => p.id === postId);
     if (!post) return;
     if (navigator.share) {
-      navigator.share({ title: `Check out this ${post.species} catch on Fish Net!`, text: post.caption, url: window.location.href });
+      navigator.share({ 
+        title: t('feed.shareTitle', { species: post.species }), 
+        text: post.caption, 
+        url: window.location.href 
+      });
     } else {
       navigator.clipboard.writeText(window.location.href);
-      toast({ title: "Link copied!", description: "Share this awesome catch with friends." });
+      toast({ title: t('feed.linkCopied'), description: t('feed.linkCopiedDesc') });
     }
   };
 
@@ -107,9 +119,9 @@ export default function FeedPage() {
     try {
       if (syncStatus.isOnline) await syncService.forcSync();
       loadPosts(); // Manually reload posts on refresh
-      toast({ title: "Feed refreshed", description: syncStatus.isOnline ? "Latest posts loaded" : "Showing cached posts" });
+      toast({ title: t('post.feedRefreshed'), description: syncStatus.isOnline ? t('post.latestPosts') : t('post.cachedPosts') });
     } catch (error) {
-      toast({ title: "Refresh failed", description: "Could not refresh feed", variant: "destructive" });
+      toast({ title: t('post.refreshFailed'), description: t('post.couldNotRefresh'), variant: "destructive" });
     } finally {
       setIsRefreshing(false);
     }
@@ -125,26 +137,25 @@ export default function FeedPage() {
         <div className="flex items-center justify-between p-4 h-20">
           <div className="flex items-center gap-3">
             <div>
-              <h1 className="text-2xl font-bold text-sky-400 tracking-wider">Fish Net</h1>
-            <p>Feed</p>
+              <h1 className="text-2xl font-bold text-sky-400 tracking-wider">{t('app.name')}</h1>
+            <p>{t('feed.title')}</p>
             </div>
             <Badge className={cn("hidden sm:inline-flex items-center text-xs", syncStatus.isOnline ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/30" : "bg-amber-500/20 text-amber-300 border-amber-500/30")}>
-              {syncStatus.isOnline ? <><Wifi className="h-3 w-3 mr-1.5" /> Online</> : <><WifiOff className="h-3 w-3 mr-1.5" /> Offline</>}
+              {syncStatus.isOnline ? <><Wifi className="h-3 w-3 mr-1.5" /> {t('map.online')}</> : <><WifiOff className="h-3 w-3 mr-1.5" /> {t('map.offline')}</>}
             </Badge>
           </div>
           <div className="flex items-center gap-2">
             <div className="hidden sm:block">
-              <NewPostDialog onPostCreated={loadPosts}>
-                <Button className="bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-full shadow-lg shadow-sky-500/30 transition-all duration-300">
-                    <Plus className="h-5 w-5 mr-2" /> New Post
-                </Button>
-              </NewPostDialog>
+              <NewPostDialog 
+                onPostCreated={loadPosts}
+                trigger={
+                  <Button className="bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-full shadow-lg shadow-sky-500/30 transition-all duration-300">
+                      <Plus className="h-5 w-5 mr-2" /> {t('post.newPost')}
+                  </Button>
+                }
+              />
             </div>
-            <MessagesDialog>
-                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-sky-500/20">
-                    <Users className="h-5 w-5" />
-                </Button>
-            </MessagesDialog>
+            <MessagesDialog />
             {/* --- EDIT: Hidden on mobile, visible on sm screens and up --- */}
             <Button variant="ghost" size="icon" onClick={handleRefresh} disabled={isRefreshing} className="hidden sm:flex text-gray-400 hover:text-white hover:bg-sky-500/20">
               <RefreshCw className={cn("h-5 w-5", isRefreshing && "animate-spin")} />
@@ -157,7 +168,7 @@ export default function FeedPage() {
         {syncStatus.isSyncing && (
           <div className="bg-sky-500/20 p-3 rounded-lg text-center text-sm text-sky-300 flex items-center justify-center gap-2 mb-4">
             <RefreshCw className="h-4 w-4 animate-spin" />
-            <span>Syncing your data...</span>
+            <span>{t('post.syncingData')}</span>
           </div>
         )}
         <AnimatePresence mode="wait">
@@ -183,18 +194,25 @@ export default function FeedPage() {
               <div className="w-20 h-20 bg-sky-500/10 border-2 border-sky-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="h-10 w-10 text-sky-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">The Ocean is Quiet</h3>
-              <p className="text-gray-400 mb-6">Be the first to share a catch with the community!</p>
-              <NewPostDialog onPostCreated={loadPosts}>
-                <Button size="lg" className="bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-full shadow-lg shadow-sky-500/30 transition-all duration-300"><Plus className="h-5 w-5 mr-2" /> Create First Post</Button>
-              </NewPostDialog>
+              <h3 className="text-xl font-semibold text-white mb-2">{t('post.oceanQuiet')}</h3>
+              <p className="text-gray-400 mb-6">{t('post.beFirst')}</p>
+              <NewPostDialog 
+                onPostCreated={loadPosts}
+                trigger={
+                  <Button size="lg" className="bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-full shadow-lg shadow-sky-500/30 transition-all duration-300">
+                    <Plus className="h-5 w-5 mr-2" /> {t('post.createPost')}
+                  </Button>
+                }
+              />
             </motion.div>
           )}
         </AnimatePresence>
       </main>
 
       <div className="sm:hidden fixed bottom-24 right-4 z-40">
-         <NewPostDialog onPostCreated={loadPosts}>
+         <NewPostDialog 
+           onPostCreated={loadPosts}
+           trigger={
              <motion.div
                  whileHover={{ scale: 1.1 }}
                  whileTap={{ scale: 0.9 }}
@@ -205,7 +223,8 @@ export default function FeedPage() {
                     <Plus size={28} />
                 </Button>
               </motion.div>
-        </NewPostDialog>
+           }
+         />
       </div>
 
     </div>
