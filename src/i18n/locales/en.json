@@ -50,7 +50,7 @@
     "linkCopiedDesc": "Share this awesome catch with friends."
   },
   "analyze": {
-    "title": "Analyze",
+    "title": "🐟 AI Fish Scanner",
     "search": "Search species...",
     "uploadImage": "Upload Image",
     "takePhoto": "Take Photo",
@@ -89,7 +89,15 @@
     "saved": "Saved",
     "savedToCatch": "Catch saved to history.",
     "saveFailed": "Save failed",
-    "couldNotSave": "Could not save catch."
+    "couldNotSave": "Could not save catch.",
+    "subtitle": "Professional species identification powered by advanced AI models",
+    "uploadFromGallery": "Upload from Gallery",
+    "accuracy": "95% Accuracy",
+    "healthScoreLabel": "Health Score",
+    "analysisInProgress": "AI Analysis in Progress",
+    "analysisFailedDesc": "Could not analyze image. Try again.",
+    "catchSaved": "Catch saved to history.",
+    "saveFailedDesc": "Could not save catch."
   },
   "map": {
     "title": "Map",
@@ -144,7 +152,19 @@
     "bio": "Bio",
     "catches": "Catches",
     "followers": "Followers",
-    "following": "Following"
+    "following": "Following",
+    "sampleComment1": "Great catch!",
+    "sampleComment2": "That's a beautiful fish!",
+    "sampleComment3": "Where did you catch this?",
+    "sampleComment4": "Amazing size!",
+    "shareTitle": "Check out this {{species}}!",
+    "posts": "Posts",
+    "likes": "Likes",
+    "favorite": "Favorite",
+    "editProfile": "Edit Profile",
+    "myPosts": "My Posts",
+    "noPosts": "No posts yet",
+    "shareFirstCatch": "Share your first catch!"
   },
   "settings": {
     "title": "Settings",
@@ -198,7 +218,9 @@
     "success": "Success",
     "yes": "Yes",
     "no": "No",
-    "ok": "OK"
+    "ok": "OK",
+    "or": "or",
+    "back": "Back"
   },
   "errors": {
     "geolocationNotSupported": "Geolocation not supported",
@@ -258,7 +280,8 @@
     "missingInfoDesc": "Please select an image and species",
     "postCreated": "Post created!",
     "postCreatedDesc": "Your catch has been shared with the community",
-    "failedToCreate": "Failed to create post"
+    "failedToCreate": "Failed to create post",
+    "viewAllComments": "View all {{count}} comments"
   },
   "catchHistory": {
     "title": "Catch History",
@@ -272,7 +295,8 @@
     "date": "Date",
     "latLng": "Lat/Lng",
     "image": "Image",
-    "back": "Back"
+    "back": "Back",
+    "weight": "Weight"
   },
   "profilePage": {
     "fishNet": "Fish Net",

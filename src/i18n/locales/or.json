@@ -39,7 +39,15 @@
     "likeCount_plural": "{{count}} ପସନ୍ଦ",
     "commentCount": "{{count}} ମନ୍ତବ୍ୟ",
     "commentCount_plural": "{{count}} ମନ୍ତବ୍ୟ",
-    "timeAgo": "{{time}} ପୂର୍ବରୁ"
+    "timeAgo": "{{time}} ପୂର୍ବରୁ",
+    "sampleComment1": "Amazing catch! 🎣",
+    "sampleComment2": "What a beauty!",
+    "sampleComment3": "Great photo quality!",
+    "sampleComment4": "This species is rare!",
+    "sampleComment5": "Perfect timing! 🌊",
+    "shareTitle": "Check out this {{species}} catch on Fish Net!",
+    "linkCopied": "Link copied!",
+    "linkCopiedDesc": "Share this awesome catch with friends."
   },
   "analyze": {
     "title": "ବିଶ୍ଳେଷଣ",
@@ -54,7 +62,42 @@
     "confidence": "ଆତ୍ମବିଶ୍ୱାସ",
     "commonNames": "ସାଧାରଣ ନାମ",
     "habitat": "ବାସସ୍ଥାନ",
-    "uploadFromDevice": "ଡିଭାଇସରୁ ଅପଲୋଡ୍ କରନ୍ତୁ"
+    "uploadFromDevice": "ଡିଭାଇସରୁ ଅପଲୋଡ୍ କରନ୍ତୁ",
+    "subtitle": "Professional species identification powered by advanced AI models",
+    "realtimeAnalysis": "Real-time AI analysis • 50+ species",
+    "professionalAnalysis": "Professional Analysis",
+    "advancedNeural": "Advanced neural network with confidence scoring and health assessment",
+    "analyzingAI": "Analyzing with AI...",
+    "captureAnalyze": "📸 Capture & Analyze",
+    "uploadFromGallery": "Upload from Gallery",
+    "accuracy": "95% Accuracy",
+    "aiConfidence": "AI Confidence",
+    "instantResults": "Instant Results",
+    "realtimeAnalysisShort": "Real-time Analysis",
+    "healthScoreLabel": "Health Score",
+    "freshnessCheck": "Freshness Check",
+    "sizeEstimation": "Size Estimation",
+    "weightLength": "Weight & Length",
+    "analysisInProgress": "AI Analysis in Progress",
+    "processingNeural": "Processing neural networks...",
+    "calibrateSize": "Calibrate Size",
+    "analysisFailed": "Analysis failed",
+    "analysisFailedDesc": "Could not analyze image. Try again.",
+    "saved": "Saved",
+    "catchSaved": "Catch saved to history.",
+    "saveFailed": "Save failed",
+    "saveFailedDesc": "Could not save catch.",
+    "aiScanner": "🐟 AI Fish Scanner",
+    "professionalId": "Professional species identification powered by advanced AI models",
+    "or": "or",
+    "uploadGallery": "Upload from Gallery",
+    "accuracy95": "95% Accuracy",
+    "healthScoreShort": "Health Score",
+    "aiAnalysisProgress": "AI Analysis in Progress",
+    "analysisResults": "Analysis Results",
+    "couldNotAnalyze": "Could not analyze image. Try again.",
+    "savedToCatch": "Catch saved to history.",
+    "couldNotSave": "Could not save catch."
   },
   "map": {
     "title": "ମାନଚିତ୍ର",
@@ -62,7 +105,21 @@
     "myCatches": "ମୋର ଧରା",
     "viewOnMap": "ମାନଚିତ୍ରରେ ଦେଖନ୍ତୁ",
     "location": "ସ୍ଥାନ",
-    "noLocation": "କୌଣସି ସ୍ଥାନ ଡାଟା ନାହିଁ"
+    "noLocation": "କୌଣସି ସ୍ଥାନ ଡାଟା ନାହିଁ",
+    "allCatches": "All Catches",
+    "communityData": "Community Data",
+    "mapLayers": "Map Layers",
+    "weight": "Weight",
+    "gps": "GPS",
+    "traceability": "Traceability",
+    "health": "Health",
+    "centerOnLocation": "Center on my location",
+    "catchesMapped": "Catches Mapped",
+    "avgTraceability": "Avg. Traceability",
+    "online": "Online",
+    "offline": "Offline",
+    "pendingSync": "Pending Sync",
+    "mapNotInitialized": "Map not initialized — Leaflet missing"
   },
   "history": {
     "title": "ମୋର ଧରା",
@@ -73,7 +130,15 @@
     "weight": "ଓଜନ",
     "length": "ଲମ୍ବ",
     "date": "ତାରିଖ",
-    "viewDetails": "ବିସ୍ତୃତ ବିବରଣୀ ଦେଖନ୍ତୁ"
+    "viewDetails": "ବିସ୍ତୃତ ବିବରଣୀ ଦେଖନ୍ତୁ",
+    "catchHistory": "Catch History",
+    "personalLog": "Your personal fishing log",
+    "traceability": "Traceability",
+    "health": "Health",
+    "healthScore": "Health Score",
+    "analysisDetails": "Analysis Details",
+    "recentTrends": "Recent Trends",
+    "detailedAnalysis": "Detailed analysis results for {{species}} would be displayed here, providing deeper insights into the catch data and historical trends for regulatory and personal tracking purposes."
   },
   "profile": {
     "title": "ପ୍ରୋଫାଇଲ୍",
@@ -87,7 +152,19 @@
     "bio": "ବାୟୋ",
     "catches": "ଧରା",
     "followers": "ଅନୁସରଣକାରୀ",
-    "following": "ଅନୁସରଣ କରୁଛନ୍ତି"
+    "following": "ଅନୁସରଣ କରୁଛନ୍ତି",
+    "sampleComment1": "Great catch!",
+    "sampleComment2": "That's a beautiful fish!",
+    "sampleComment3": "Where did you catch this?",
+    "sampleComment4": "Amazing size!",
+    "shareTitle": "Check out this {{species}}!",
+    "posts": "Posts",
+    "likes": "Likes",
+    "favorite": "Favorite",
+    "editProfile": "Edit Profile",
+    "myPosts": "My Posts",
+    "noPosts": "No posts yet",
+    "shareFirstCatch": "Share your first catch!"
   },
   "settings": {
     "title": "ସେଟିଂସ୍",
@@ -141,7 +218,9 @@
     "success": "ସଫଳତା",
     "yes": "ହଁ",
     "no": "ନା",
-    "ok": "ଠିକ୍ ଅଛି"
+    "ok": "ଠିକ୍ ଅଛି",
+    "or": "or",
+    "back": "Back"
   },
   "chat": {
     "typeMessage": "ଏକ ବାର୍ତ୍ତା ଟାଇପ୍ କରନ୍ତୁ...",
@@ -195,7 +274,8 @@
     "missingInfoDesc": "Please select an image and species",
     "postCreated": "Post created!",
     "postCreatedDesc": "Your catch has been shared with the community",
-    "failedToCreate": "Failed to create post"
+    "failedToCreate": "Failed to create post",
+    "viewAllComments": "View all {{count}} comments"
   },
   "catchHistory": {
     "title": "Catch History",
@@ -209,7 +289,8 @@
     "date": "Date",
     "latLng": "Lat/Lng",
     "image": "Image",
-    "back": "Back"
+    "back": "Back",
+    "weight": "Weight"
   },
   "profilePage": {
     "fishNet": "Fish Net",
@@ -223,5 +304,11 @@
     "myPosts": "My Posts",
     "noPosts": "No posts yet",
     "shareFirst": "Share your first catch!"
+  },
+  "errors": {
+    "geolocationNotSupported": "Geolocation not supported",
+    "locationUnavailable": "Location unavailable",
+    "failedToGetLocation": "Failed to get location permission",
+    "failedToSaveSettings": "Failed to save settings"
   }
 }

@@ -3,8 +3,10 @@ import { CatchMap } from '@/components/map/CatchMap';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function MapPage() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   return (
     <div className="h-screen bg-gradient-to-br from-blue-50 to-cyan-50">
@@ -15,7 +17,7 @@ export default function MapPage() {
           className="flex items-center gap-2 bg-gradient-primary text-white font-semibold shadow-glow px-4 py-2 rounded-lg hover:opacity-90 transition-all duration-200"
         >
           <ArrowLeft className="w-5 h-5" />
-          <span>Back</span>
+          <span>{t('common.back')}</span>
         </Button>
       </div>
       <div className="h-[calc(100%-64px)]">

@@ -39,7 +39,15 @@
     "likeCount_plural": "{{count}} ಲೈಕ್‌ಗಳು",
     "commentCount": "{{count}} ಕಾಮೆಂಟ್",
     "commentCount_plural": "{{count}} ಕಾಮೆಂಟ್‌ಗಳು",
-    "timeAgo": "{{time}} ಹಿಂದೆ"
+    "timeAgo": "{{time}} ಹಿಂದೆ",
+    "sampleComment1": "Amazing catch! 🎣",
+    "sampleComment2": "What a beauty!",
+    "sampleComment3": "Great photo quality!",
+    "sampleComment4": "This species is rare!",
+    "sampleComment5": "Perfect timing! 🌊",
+    "shareTitle": "Check out this {{species}} catch on Fish Net!",
+    "linkCopied": "Link copied!",
+    "linkCopiedDesc": "Share this awesome catch with friends."
   },
   "analyze": {
     "title": "ವಿಶ್ಲೇಷಣೆ",
@@ -54,7 +62,42 @@
     "confidence": "ವಿಶ್ವಾಸ",
     "commonNames": "ಸಾಮಾನ್ಯ ಹೆಸರುಗಳು",
     "habitat": "ನಿವಾಸ",
-    "uploadFromDevice": "ಸಾಧನದಿಂದ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ"
+    "uploadFromDevice": "ಸಾಧನದಿಂದ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
+    "subtitle": "Professional species identification powered by advanced AI models",
+    "realtimeAnalysis": "Real-time AI analysis • 50+ species",
+    "professionalAnalysis": "Professional Analysis",
+    "advancedNeural": "Advanced neural network with confidence scoring and health assessment",
+    "analyzingAI": "Analyzing with AI...",
+    "captureAnalyze": "📸 Capture & Analyze",
+    "uploadFromGallery": "Upload from Gallery",
+    "accuracy": "95% Accuracy",
+    "aiConfidence": "AI Confidence",
+    "instantResults": "Instant Results",
+    "realtimeAnalysisShort": "Real-time Analysis",
+    "healthScoreLabel": "Health Score",
+    "freshnessCheck": "Freshness Check",
+    "sizeEstimation": "Size Estimation",
+    "weightLength": "Weight & Length",
+    "analysisInProgress": "AI Analysis in Progress",
+    "processingNeural": "Processing neural networks...",
+    "calibrateSize": "Calibrate Size",
+    "analysisFailed": "Analysis failed",
+    "analysisFailedDesc": "Could not analyze image. Try again.",
+    "saved": "Saved",
+    "catchSaved": "Catch saved to history.",
+    "saveFailed": "Save failed",
+    "saveFailedDesc": "Could not save catch.",
+    "aiScanner": "🐟 AI Fish Scanner",
+    "professionalId": "Professional species identification powered by advanced AI models",
+    "or": "or",
+    "uploadGallery": "Upload from Gallery",
+    "accuracy95": "95% Accuracy",
+    "healthScoreShort": "Health Score",
+    "aiAnalysisProgress": "AI Analysis in Progress",
+    "analysisResults": "Analysis Results",
+    "couldNotAnalyze": "Could not analyze image. Try again.",
+    "savedToCatch": "Catch saved to history.",
+    "couldNotSave": "Could not save catch."
   },
   "map": {
     "title": "ನಕ್ಷೆ",
@@ -62,7 +105,21 @@
     "myCatches": "ನನ್ನ ಮೀನುಗಳು",
     "viewOnMap": "ನಕ್ಷೆಯಲ್ಲಿ ನೋಡಿ",
     "location": "ಸ್ಥಳ",
-    "noLocation": "ಸ್ಥಳ ಡೇಟಾ ಇಲ್ಲ"
+    "noLocation": "ಸ್ಥಳ ಡೇಟಾ ಇಲ್ಲ",
+    "allCatches": "All Catches",
+    "communityData": "Community Data",
+    "mapLayers": "Map Layers",
+    "weight": "Weight",
+    "gps": "GPS",
+    "traceability": "Traceability",
+    "health": "Health",
+    "centerOnLocation": "Center on my location",
+    "catchesMapped": "Catches Mapped",
+    "avgTraceability": "Avg. Traceability",
+    "online": "Online",
+    "offline": "Offline",
+    "pendingSync": "Pending Sync",
+    "mapNotInitialized": "Map not initialized — Leaflet missing"
   },
   "history": {
     "title": "ನನ್ನ ಮೀನುಗಳು",
@@ -73,7 +130,15 @@
     "weight": "ತೂಕ",
     "length": "ಉದ್ದ",
     "date": "ದಿನಾಂಕ",
-    "viewDetails": "ವಿವರಗಳನ್ನು ನೋಡಿ"
+    "viewDetails": "ವಿವರಗಳನ್ನು ನೋಡಿ",
+    "catchHistory": "Catch History",
+    "personalLog": "Your personal fishing log",
+    "traceability": "Traceability",
+    "health": "Health",
+    "healthScore": "Health Score",
+    "analysisDetails": "Analysis Details",
+    "recentTrends": "Recent Trends",
+    "detailedAnalysis": "Detailed analysis results for {{species}} would be displayed here, providing deeper insights into the catch data and historical trends for regulatory and personal tracking purposes."
   },
   "profile": {
     "title": "ಪ್ರೊಫೈಲ್",
@@ -87,7 +152,19 @@
     "bio": "ಬಯೋ",
     "catches": "ಮೀನುಗಳು",
     "followers": "ಅನುಯಾಯಿಗಳು",
-    "following": "ಅನುಸರಿಸುತ್ತಿದ್ದಾರೆ"
+    "following": "ಅನುಸರಿಸುತ್ತಿದ್ದಾರೆ",
+    "sampleComment1": "Great catch!",
+    "sampleComment2": "That's a beautiful fish!",
+    "sampleComment3": "Where did you catch this?",
+    "sampleComment4": "Amazing size!",
+    "shareTitle": "Check out this {{species}}!",
+    "posts": "Posts",
+    "likes": "Likes",
+    "favorite": "Favorite",
+    "editProfile": "Edit Profile",
+    "myPosts": "My Posts",
+    "noPosts": "No posts yet",
+    "shareFirstCatch": "Share your first catch!"
   },
   "settings": {
     "title": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
@@ -124,7 +201,8 @@
     "mwr": "मारवाड़ी",
     "bn": "বাংলা",
     "pa": "ਪੰਜਾਬੀ",
-    "mr": "मराठी"
+    "mr": "मराठी",
+    "or": "Odia"
   },
   "common": {
     "save": "ಉಳಿಸಿ",
@@ -140,7 +218,9 @@
     "success": "ಯಶಸ್ಸು",
     "yes": "ಹೌದು",
     "no": "ಇಲ್ಲ",
-    "ok": "ಸರಿ"
+    "ok": "ಸರಿ",
+    "or": "or",
+    "back": "Back"
   },
   "chat": {
     "typeMessage": "ಸಂದೇಶವನ್ನು ಟೈಪ್ ಮಾಡಿ...",
@@ -194,7 +274,8 @@
     "missingInfoDesc": "Please select an image and species",
     "postCreated": "Post created!",
     "postCreatedDesc": "Your catch has been shared with the community",
-    "failedToCreate": "Failed to create post"
+    "failedToCreate": "Failed to create post",
+    "viewAllComments": "View all {{count}} comments"
   },
   "catchHistory": {
     "title": "Catch History",
@@ -208,7 +289,8 @@
     "date": "Date",
     "latLng": "Lat/Lng",
     "image": "Image",
-    "back": "Back"
+    "back": "Back",
+    "weight": "Weight"
   },
   "profilePage": {
     "fishNet": "Fish Net",
@@ -222,5 +304,11 @@
     "myPosts": "My Posts",
     "noPosts": "No posts yet",
     "shareFirst": "Share your first catch!"
+  },
+  "errors": {
+    "geolocationNotSupported": "Geolocation not supported",
+    "locationUnavailable": "Location unavailable",
+    "failedToGetLocation": "Failed to get location permission",
+    "failedToSaveSettings": "Failed to save settings"
   }
 }
