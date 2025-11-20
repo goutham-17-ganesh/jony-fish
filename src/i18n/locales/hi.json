@@ -65,7 +65,18 @@
     "mapLayers": "मैप परतें",
     "viewOnMap": "मैप पर देखें",
     "location": "स्थान",
-    "noLocation": "कोई स्थान डेटा नहीं"
+    "noLocation": "कोई स्थान डेटा नहीं",
+    "weight": "वजन",
+    "gps": "जीपीएस",
+    "traceability": "ट्रेसेबिलिटी",
+    "health": "स्वास्थ्य",
+    "centerOnLocation": "मेरे स्थान पर केंद्रित करें",
+    "catchesMapped": "मैप की गई मछलियाँ",
+    "avgTraceability": "औसत ट्रेसेबिलिटी",
+    "online": "ऑनलाइन",
+    "offline": "ऑफलाइन",
+    "pendingSync": "सिंक लंबित",
+    "mapNotInitialized": "मैप प्रारंभ नहीं किया गया — Leaflet गायब है"
   },
   "history": {
     "title": "मेरी मछलियाँ",
@@ -83,7 +94,8 @@
     "health": "स्वास्थ्य",
     "healthScore": "स्वास्थ्य स्कोर",
     "analysisDetails": "विश्लेषण विवरण",
-    "recentTrends": "हाल के रुझान"
+    "recentTrends": "हाल के रुझान",
+    "detailedAnalysis": "{{species}} के लिए विस्तृत विश्लेषण परिणाम यहां प्रदर्शित किए जाएंगे, नियामक और व्यक्तिगत ट्रैकिंग उद्देश्यों के लिए कैच डेटा और ऐतिहासिक रुझानों में गहरी अंतर्दृष्टि प्रदान करेंगे।"
   },
   "profile": {
     "title": "प्रोफाइल",

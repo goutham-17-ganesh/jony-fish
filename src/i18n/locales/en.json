@@ -65,7 +65,18 @@
     "mapLayers": "Map Layers",
     "viewOnMap": "View on Map",
     "location": "Location",
-    "noLocation": "No location data"
+    "noLocation": "No location data",
+    "weight": "Weight",
+    "gps": "GPS",
+    "traceability": "Traceability",
+    "health": "Health",
+    "centerOnLocation": "Center on my location",
+    "catchesMapped": "Catches Mapped",
+    "avgTraceability": "Avg. Traceability",
+    "online": "Online",
+    "offline": "Offline",
+    "pendingSync": "Pending Sync",
+    "mapNotInitialized": "Map not initialized — Leaflet missing"
   },
   "history": {
     "title": "My Catches",
@@ -83,7 +94,8 @@
     "health": "Health",
     "healthScore": "Health Score",
     "analysisDetails": "Analysis Details",
-    "recentTrends": "Recent Trends"
+    "recentTrends": "Recent Trends",
+    "detailedAnalysis": "Detailed analysis results for {{species}} would be displayed here, providing deeper insights into the catch data and historical trends for regulatory and personal tracking purposes."
   },
   "profile": {
     "title": "Profile",

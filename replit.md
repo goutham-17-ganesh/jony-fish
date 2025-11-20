@@ -90,6 +90,23 @@ src/
 
 ## Recent Changes
 
+### Language Switching Implementation (2025-11-20)
+1. **HARDCODED Languages Constant**: Created `HARDCODED_LANGUAGES` in `src/i18n/index.ts` for uniform language management across all components
+2. **Vite Configuration**: Updated with specific Replit domain for proxy compatibility
+3. **Force Re-render on Language Change**: Added `window.location.reload()` in SettingsDialog after language selection to ensure complete application re-render
+4. **Component Translations**: Converted hardcoded English text to translation keys in:
+   - BottomNavigation: All navigation labels (Feed, Catches, Map, Profile)
+   - CatchMap: Map layers, filters, location labels, and error messages
+   - HistoryList: Page title, metrics, chart labels, and statistics
+   - SettingsDialog: All settings fields and error messages
+5. **Translation Files**: Added comprehensive translation keys to both `en.json` and `hi.json` including:
+   - Navigation labels
+   - Map-related text (layers, filters, markers)
+   - History metrics and statistics
+   - Error messages (geolocation, permissions, settings)
+   - All 12 language names in native scripts
+6. **Language Keys Verified**: All language codes (en, ta, te, hi, kn, ml, gu, mwr, bn, pa, mr, or) exist in both locale files
+
 ### UI Enhancement & Internationalization (2025-09-29)
 1. **Navigation Branding**: Updated all pages (Feed, My Catches, Profile) to display "Fish Net" branding consistently
 2. **Loading Screens**: Added loading states (1s for login/signup, 1.5s for image upload/analyze) for better UX

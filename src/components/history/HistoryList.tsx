@@ -221,13 +221,14 @@ export const HistoryList = ({
   );
 };
 
-const AnalysisResults = ({ result }: { result: any }) => (
-  <div className="text-gray-300 text-sm">
-    Detailed analysis results for {result.species} would be displayed here,
-    providing deeper insights into the catch data and historical trends for
-    regulatory and personal tracking purposes.
-  </div>
-);
+const AnalysisResults = ({ result }: { result: any }) => {
+  const { t } = useTranslation();
+  return (
+    <div className="text-gray-300 text-sm">
+      {t('history.detailedAnalysis', { species: result.species })}
+    </div>
+  );
+};
 
 const cn = (...classes: (string | undefined | null | false)[]) =>
   classes.filter(Boolean).join(" ");

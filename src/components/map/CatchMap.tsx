@@ -329,7 +329,7 @@ export const CatchMap = ({ onCatchSelect, className }: CatchMapProps) => {
         <div className="absolute inset-0 z-[3000] flex items-center justify-center bg-white/95 text-slate-900 p-4 text-center border border-slate-200">
           <div>
             <div className="font-bold text-lg mb-2">
-              Map not initialized — Leaflet missing
+              {t('map.mapNotInitialized')}
             </div>
             <div className="text-sm mb-3">
               The global <code>L</code> (Leaflet) object is not present. Please
@@ -371,7 +371,7 @@ export const CatchMap = ({ onCatchSelect, className }: CatchMapProps) => {
                 </div>
                 {hoveredCatch.estimated_weight && (
                   <div className="text-xs text-slate-700 font-semibold">
-                    Weight: {hoveredCatch.estimated_weight.toFixed(1)} kg
+                    {t('map.weight')}: {hoveredCatch.estimated_weight.toFixed(1)} kg
                   </div>
                 )}
               </div>
@@ -379,20 +379,20 @@ export const CatchMap = ({ onCatchSelect, className }: CatchMapProps) => {
             <div className="grid grid-cols-2 gap-2 text-xs">
               <span className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-sky-50 text-sky-700 border border-sky-100">
                 <Zap className="w-3 h-3 text-sky-400" />
-                <span className="font-bold">Traceability:</span>{" "}
+                <span className="font-bold">{t('map.traceability')}:</span>{" "}
                 {hoveredCatch.confidence.toFixed(0)}%
               </span>
               {typeof hoveredCatch.health_score === "number" && (
                 <span className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-100">
                   <span className="text-emerald-500">💚</span>
-                  <span className="font-bold">Health:</span>{" "}
+                  <span className="font-bold">{t('map.health')}:</span>{" "}
                   {hoveredCatch.health_score.toFixed(0)}%
                 </span>
               )}
             </div>
             {hoveredCatch.latitude && hoveredCatch.longitude && (
               <div className="text-xs text-slate-500 mt-2">
-                GPS: {hoveredCatch.latitude.toFixed(4)},{" "}
+                {t('map.gps')}: {hoveredCatch.latitude.toFixed(4)},{" "}
                 {hoveredCatch.longitude.toFixed(4)}
               </div>
             )}
@@ -404,7 +404,7 @@ export const CatchMap = ({ onCatchSelect, className }: CatchMapProps) => {
           size="icon"
           onClick={centerOnUserLocation}
           className="bg-white/90 backdrop-blur-sm hover:bg-sky-50 shadow-md border border-slate-200 text-slate-700 hover:text-slate-900"
-          title="Center on my location"
+          title={t('map.centerOnLocation')}
         >
           <Navigation size={18} />
         </Button>
@@ -492,11 +492,11 @@ export const CatchMap = ({ onCatchSelect, className }: CatchMapProps) => {
                 </div>
                 <div>
                   <div className="font-bold text-lg text-slate-900">
-                    {catches.length + sampleFish.length} Catches Mapped
+                    {catches.length + sampleFish.length} {t('map.catchesMapped')}
                   </div>
                   <div className="text-sm text-slate-500">
                     {catches.length > 0 &&
-                      `Avg. Traceability: ${(
+                      `${t('map.avgTraceability')}: ${(
                         catches.reduce((s, c) => s + c.confidence, 0) /
                         catches.length
                       ).toFixed(0)}%`}
@@ -515,11 +515,11 @@ export const CatchMap = ({ onCatchSelect, className }: CatchMapProps) => {
                 >
                   {isOnline ? (
                     <>
-                      <Wifi className="h-3 w-3 mr-1" /> Online
+                      <Wifi className="h-3 w-3 mr-1" /> {t('map.online')}
                     </>
                   ) : (
                     <>
-                      <WifiOff className="h-3 w-3 mr-1" /> Offline
+                      <WifiOff className="h-3 w-3 mr-1" /> {t('map.offline')}
                     </>
                   )}
                 </Badge>
@@ -528,7 +528,7 @@ export const CatchMap = ({ onCatchSelect, className }: CatchMapProps) => {
                     variant="outline"
                     className="bg-amber-50 text-amber-700 border-amber-100 block"
                   >
-                    {catches.filter((c) => !c.is_synced).length} Pending Sync
+                    {catches.filter((c) => !c.is_synced).length} {t('map.pendingSync')}
                   </Badge>
                 )}
               </div>
